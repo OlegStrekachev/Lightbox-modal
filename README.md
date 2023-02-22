@@ -18,6 +18,7 @@ Your gallery should have the following structure:
           <img src="img1" alt="">
           <img src="img2" alt="">
           <img src="img3" alt="">
+          ...
       </div>
   </div>
 ```
