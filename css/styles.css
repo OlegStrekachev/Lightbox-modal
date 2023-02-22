@@ -1,0 +1,46 @@
+
+.contentWidth {
+   max-width: 1200px;
+   margin: auto;
+} 
+ 
+
+.empty {
+    
+    margin: 100px 0 100px 0;
+}
+
+#gallerySection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.Gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    gap: 0.1rem;
+    
+}
+
+
+.Gallery img {
+
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+
+    .Gallery {
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: calc(100vw / 3);
+
+    }
+
+}
