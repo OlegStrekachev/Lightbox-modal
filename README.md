@@ -15,9 +15,9 @@ Your gallery should have the following structure:
 
  <optional> <div id="your-gallery-name">  <optional> 
       <div class="Gallery">
-          <img src="img\gallery\Image1.jpg" alt="">
-          <img src="img\gallery\Image2.jpg" alt="">
-          <img src="img\gallery\Image3.jpg" alt="">
+          <img src="img1" alt="">
+          <img src="img2" alt="">
+          <img src="img3" alt="">
           ....
       </div>
   </div>
