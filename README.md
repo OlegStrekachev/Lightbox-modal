@@ -13,10 +13,11 @@ How to use.
 
 Your gallery should have the following structure:
 
- ```<div class="Gallery">
+ ```
+ <div class="Gallery">
           <img src="img1" alt="">
           <img src="img2" alt="">
           <img src="img3" alt="">
-          ....
       </div>
-  </div>```
+  </div>
+```
