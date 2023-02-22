@@ -22,3 +22,10 @@ Your gallery should have the following structure:
       </div>
   </div>
 ```
+
+Then paste gigaModal.js to your js folder and add it to the html 
+
+ ```
+  <script src="js/myscript.js"></script>
+  <script src="js/gigaModal.js"></script>
+  ```
