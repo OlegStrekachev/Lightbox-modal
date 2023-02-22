@@ -13,7 +13,7 @@ How to use.
 
 Your gallery should have the following structure:
 
- ```/* optional <div id="your-gallery-name"> */
+ ```<!-- optional <div id="your-gallery-name">  -->
       <div class="Gallery">
           <img src="img1" alt="">
           <img src="img2" alt="">
