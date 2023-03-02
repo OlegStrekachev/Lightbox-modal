@@ -11,6 +11,10 @@ What works:
 - Click navigation functionality;
 - Keyboard key navigation functionality;
 
+In development:
+
+- Implementing touch navigation functionality for mobile screen use.
+
 How to use:
 
 1. Your gallery should have the following structure:
