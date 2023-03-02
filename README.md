@@ -1,6 +1,8 @@
 # Lightbox-modal
 Dynamically created modal gallery window.
 
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+
 This modal gallery is dynamycally created and populated with your existing gallery images.
 The modal window deletes itself from the page upon closure.
 
