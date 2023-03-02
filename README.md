@@ -11,7 +11,7 @@ What works:
 - Click navigation functionality;
 - Keyboard key navigation functionality;
 
-How to use.
+How to use:
 
 1. Your gallery should have the following structure:
 
