@@ -25,12 +25,12 @@ How to use:
   </div>
 ```
 
-2. Use this JS code to initiate the modal window.
+2. Paste this JS code to initiate the modal window.
+
 ```
 document.querySelectorAll('.Gallery').forEach((gallery) => {
     gallery.querySelectorAll('img').forEach((el, index) => {
         el.addEventListener('click', function() {
-            console.log(`I am clicked`, index);
             new GigaModalGallery(el, index);
         })
     })
