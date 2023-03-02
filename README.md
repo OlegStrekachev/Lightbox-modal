@@ -38,7 +38,7 @@ document.querySelectorAll('.Gallery').forEach((gallery) => {
 
 ```
 
-3. Paste gigaModal.js to your js folder and add it to the html as a script source. (You can find this file in a js folder of this project).
+3. Paste gigaModal.js to your js folder and add it to the html as a script source. (You can find this file in the js folder of this project).
 
  ```
   <script src="js/myscript.js"></script>
