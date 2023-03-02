@@ -13,7 +13,7 @@ What works:
 
 How to use.
 
-Your gallery should have the following structure:
+1. Your gallery should have the following structure:
 
  ```
  <div class="Gallery">
@@ -25,7 +25,20 @@ Your gallery should have the following structure:
   </div>
 ```
 
-Then paste gigaModal.js to your js folder and add it to the html 
+2. Use this JS code to initiate the modal window.
+```
+document.querySelectorAll('.Gallery').forEach((gallery) => {
+    gallery.querySelectorAll('img').forEach((el, index) => {
+        el.addEventListener('click', function() {
+            console.log(`I am clicked`, index);
+            new GigaModalGallery(el, index);
+        })
+    })
+})
+
+```
+
+3. Paste gigaModal.js to your js folder and add it to the html as a script source.
 
  ```
   <script src="js/myscript.js"></script>
