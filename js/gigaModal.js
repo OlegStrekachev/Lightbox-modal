@@ -145,12 +145,12 @@ function GigaModalGallery(el, index) {
     
         // Carousel slide on click
         
-        //    modalDeclarations.carouselItem.forEach((item, index) => {
-        //         item.addEventListener('click', () => {
-        //             modalDeclarations.index = index;
-        //             modalDeclarations.scrollImagetoVPCenter(item, index);
-        //         })
-        //     })
+           modalDeclarations.carouselItem.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    modalDeclarations.index = index;
+                    modalDeclarations.scrollImagetoVPCenter(item, index);
+                })
+            })
 
         // Pointer events
 
