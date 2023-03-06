@@ -1,18 +1,11 @@
 /* Modal Styling */
 
-#gigaModal {
-    z-index: 2000;
-    width: 100%;
-    margin: 0 auto;
-    /* left: 50%;
-    margin-left: -250px; */
-}
-
 .gigaOverlay {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    bottom: 0;
+    /* height: 100%; */
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: -1;
@@ -24,23 +17,22 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    right: 0;
+    height: 100%;
     display: block;
+    z-index: 1;
     }
        
 .gigaLargePreview {
     display: flex;
-    /* height: 80vh; */
+    height: 80%;
     justify-content: space-between;
     align-items: center;
     z-index: 1;
 }
 
 .gigaLargePreview .image {
-    height: 80vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,11 +55,11 @@
 .gigaCloseButton {
 
     position: absolute;
-    height: 3vh;
-    width: 3vh;
+    height: 5vh;
+    width: 5vh;
     top: 0;
     right: 0;
-    margin: 1vh;
+    margin: 3vh 1vh 1vh 1vh;
     
 }
 
@@ -124,23 +116,24 @@ button:active, button:hover {
 /* Carousel Gallery Stytling */
 
 .gigaCarouselSlider {
-    height: 20vh;
+    height: 20%;
     display: flex;
     justify-content: center;
     }
 .gigaSliderContainer {
-    height: 20vh;
+    height: 100%;
     display: flex;
     align-items: center;
     white-space: nowrap;
     transform: translateX(0px);
     transition: transform 0.4s ease-in-out;
+    touch-action: none;
 }
 .gigaSliderContainer img {
     object-fit: cover;  
-    height: 90%;
+    height: 80%;
     aspect-ratio : 1 / 1;
-    margin-left: 1vw;
+    padding: 1vw 0 1vw 1vw;
     transform: scale(1);
     filter: brightness(65%);
     z-index: 0;
@@ -158,9 +151,8 @@ button:active, button:hover {
 
     .gigaSliderContainer img {
 
-    width: calc(100vw / 3 - 3vw);
-    margin: 0;
-    padding: 1vw;
+    width: calc(100vw / 4);
+    height: calc(100vw / 4 - 2vh);
 
     }
 

@@ -39,6 +39,18 @@ function GigaModalGallery(el, index) {
     
 </div>`);
 
+    // Sets height of the modal window, using InnerHeight for mobile devices, 
+    // to avoid navigation bar shift when fullscreen modal has a fixed position
+
+
+    // if (/Android|iPhone/i.test(navigator.userAgent)) {
+    //     // This checks if the current device is in fact mobile
+    //     document.querySelector('#gigaModal').style.height = `${window.innerHeight}px`;
+    //   } else {
+    //     document.querySelector('#gigaModal').style.height = `100vh`
+    //   };
+  
+
     const modalDeclarations = {
         index: index,
         el: el,
@@ -54,7 +66,7 @@ function GigaModalGallery(el, index) {
         removeModal: function() {
             document.querySelector('#gigaModal').remove()
             document.body.style.overflow = `auto`;
-            document.removeEventListener('keydown', (e))
+            // document.removeEventListener('keydown', (e))
         },
 
 
@@ -133,12 +145,109 @@ function GigaModalGallery(el, index) {
     
         // Carousel slide on click
         
-           modalDeclarations.carouselItem.forEach((item, index) => {
-                item.addEventListener('click', () => {
-                    modalDeclarations.index = index;
-                    modalDeclarations.scrollImagetoVPCenter(item, index);
+        //    modalDeclarations.carouselItem.forEach((item, index) => {
+        //         item.addEventListener('click', () => {
+        //             modalDeclarations.index = index;
+        //             modalDeclarations.scrollImagetoVPCenter(item, index);
+        //         })
+        //     })
+
+        // Pointer events
+
+        let pointerDown;
+        let pointerDownCoordinate 
+   
+       
+      
+
+        modalDeclarations.carousel.addEventListener('pointerdown', e => {
+            e.preventDefault();
+            console.log(e);
+            pointerDown = true;
+            modalDeclarations.carousel.style.transition = `transform 0s`;
+          
+        })
+
+        modalDeclarations.carousel.addEventListener('pointerup', e => {
+            pointerDown = false;
+            modalDeclarations.carousel.style.transition = `transform 0.4s ease-in-out`;
+            modalDeclarations.scrollImagetoVPCenter(modalDeclarations.carouselItem[modalDeclarations.index]);
+            lastPos = 'undefined';
+
+    
+            // console.log(pointerDown);
+        })
+
+        modalDeclarations.carousel.addEventListener('pointercancel', e => {
+            // console.log('e')
+        })
+
+
+        let lastPos;
+        console.log(lastPos)
+
+
+        modalDeclarations.carousel.addEventListener('pointermove', e => {
+              
+                if (typeof lastPos !== "undefined" && pointerDown) {
+                    let moveDIstance = e.clientX - lastPos;
+                    lastPos = e.clientX;
+                    console.log('distance', moveDIstance);
+                    
+                modalDeclarations.carousel.style.transform = `translateX(${Number(window.getComputedStyle(modalDeclarations.carousel).transform.split(',')[4]) + moveDIstance}px)`;
+
+                const middleOfTheViewport = document.documentElement.clientWidth / 2; 
+
+                modalDeclarations.carouselItem.forEach((item, index) => {
+                   
+                    const getLeftEdgeItem = item.getBoundingClientRect().left;
+                    const carouselItemWidth = item.getBoundingClientRect().width;
+
+                    // console.log(Math.ceil(getLeftEdgeItem + carouselItemWidth /2))
+
+                    if (Math.abs(getLeftEdgeItem + carouselItemWidth /2  - middleOfTheViewport) < 10) {
+                        console.log('Bingo', index)
+                        modalDeclarations.index = index;
+                        modalDeclarations.modalImage.src =  modalDeclarations.carouselItem[modalDeclarations.index].getAttribute('src');
+                        modalDeclarations.activeToggle();
+
+                    } 
+                    
+               
+                
                 })
-            })
+    
+                // const X = Math.min(...proximityTest);
+                // const closestItem = (element) => element == X;
+                // const closestItemIndex = proximityTest.findIndex(closestItem);
+    
+                // modalDeclarations.index = closestItemIndex;
+    
+              
+
+    
+                // modalDeclarations.scrollImagetoVPCenter(modalDeclarations.carouselItem[modalDeclarations.index]);
+
+
+
+
+
+
+
+                } else {
+                    lastPos = e.clientX;
+                }
+               
+
+     
+             
+        })
+
+      
+       // modalDeclarations.carousel.style.transform = `translateX(${e.movementX}px)`
+
+                
+            
 
         // Passing event into key controls function
 
