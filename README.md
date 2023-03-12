@@ -41,5 +41,5 @@ document.querySelectorAll('.Gallery').forEach((gallery) => {
 
 3. Paste gigaModal.js to your project folder and add it to the html as a script source. (You can find this file in the js folder of this project).
 
-   Consider that I use resetstyle.css to undo some default browser styling. If something breaks that might be a reson.
+   Consider that I use resetstyle.css to undo some default browser styling. If something breaks that might be a reason.
 
