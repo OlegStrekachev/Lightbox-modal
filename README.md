@@ -10,10 +10,7 @@ What works:
 
 - Click navigation functionality;
 - Keyboard key navigation functionality;
-
-In development:
-
-- Implementing touch navigation functionality for mobile screen use.
+- Touch functionality for mobile use;
 
 How to use:
 
