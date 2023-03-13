@@ -84,15 +84,6 @@ function GigaModalGallery(el, index) {
             modalDeclarations.carouselItem[modalDeclarations.index].classList.add('active');
         },
 
-        scrollOnClick: function () {
-            modalDeclarations.carouselItem.forEach((item, index) => {
-                 item.addEventListener('click', () => {
-                     modalDeclarations.index = index;
-                     modalDeclarations.scrollImagetoVPCenter(item, index);
-                 })
-             })
-        },
-
         initializeState: function () {
             modalDeclarations.previousMoveDistance = [];
             modalDeclarations.pointerDown = 'up';
@@ -187,7 +178,13 @@ function GigaModalGallery(el, index) {
             modalDeclarations.pointerUpStamp = e.timeStamp;
 
             if (modalDeclarations.pointerUpStamp - modalDeclarations.pointerDownStamp < 200) {
-                modalDeclarations.scrollOnClick();
+                
+                modalDeclarations.carouselItem.forEach((item, index) => {
+                    if (item == e.target) {
+                        modalDeclarations.index = index;
+                        modalDeclarations.scrollImagetoVPCenter(item, index);
+                    }
+                });
             };
 
             modalDeclarations.pointerDown = 'up';
