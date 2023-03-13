@@ -39,18 +39,6 @@ function GigaModalGallery(el, index) {
     
 </div>`);
 
-    // Sets height of the modal window, using InnerHeight for mobile devices, 
-    // to avoid navigation bar shift when fullscreen modal has a fixed position
-
-
-    // if (/Android|iPhone/i.test(navigator.userAgent)) {
-    //     // This checks if the current device is in fact mobile
-    //     document.querySelector('#gigaModal').style.height = `${window.innerHeight}px`;
-    //   } else {
-    //     document.querySelector('#gigaModal').style.height = `100vh`
-    //   };
-  
-
     const modalDeclarations = {
         index: index,
         el: el,
@@ -178,7 +166,7 @@ function GigaModalGallery(el, index) {
             modalDeclarations.pointerUpStamp = e.timeStamp;
 
             if (modalDeclarations.pointerUpStamp - modalDeclarations.pointerDownStamp < 200) {
-                
+
                 modalDeclarations.carouselItem.forEach((item, index) => {
                     if (item == e.target) {
                         modalDeclarations.index = index;
