@@ -1,7 +1,7 @@
 # Lightbox-modal
 Dynamically created modal gallery window.
 
-![alt text](http://url/to/img.png](https://i.imgur.com/p6ZC2Ib.jpg)
+![alt text](https://i.imgur.com/p6ZC2Ib.jpg)
 
 This modal gallery is dynamycally created and populated with your existing gallery images.
 The modal window deletes itself from the page upon closure.
