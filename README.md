@@ -1,5 +1,5 @@
 # Lightbox-modal
-Dynamically created modal gallery window.
+Dynamically created modal gallery window. [Most recent branch is a 'touch-functionality']
 
 ![Alt Text](https://i.imgur.com/0syuGBP.gif)
 
